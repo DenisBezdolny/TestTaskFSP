@@ -1,15 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TestTask.Bll\TestTask.Bll.csproj" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TestTask.Domain\TestTask.Domain.csproj" />
-    <ProjectReference Include="..\TestTask.Infrastructure\TestTask.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
