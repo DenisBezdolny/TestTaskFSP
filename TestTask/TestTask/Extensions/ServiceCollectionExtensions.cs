@@ -1,4 +1,5 @@
 ﻿using TestTask.Bll.Services;
+using TestTask.Domain.Entities;
 using TestTask.Domain.Interfaces.Bll;
 using TestTask.Domain.Interfaces.Repositories;
 using TestTask.Infrastructure.Repositories;
@@ -9,7 +10,7 @@ namespace TestTask.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddSingleton<IRepository<User>>(provider => new Repository<User>(user => user.Id));
             services.AddScoped<IUserService,UserService>();
 
             return services;
